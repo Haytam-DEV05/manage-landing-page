@@ -104,6 +104,11 @@ section {
 #header .navbar ul li a {
     margin: 0 10px;
     color: var(--primary-Gray);
+    transition: .4s;
+}
+
+#header .navbar ul li a:hover {
+    color: var(--primary-Orange);
 }
 
 
@@ -121,6 +126,38 @@ section {
 
     #header .navbar .navbar-home img.active {
         display: block;
+    }
+
+    #header .navbar .navbar-home img:last-child.active {
+        animation: rotate .4s ease-in-out forwards;
+    }
+
+    @keyframes rotate {
+        from {
+            opacity: 0.4;
+            transform: rotate(180deg);
+        }
+
+        to {
+            opacity: 1;
+            transform: rotate(0deg);
+        }
+    }
+
+    #header .navbar ul.active {
+        display: block;
+        position: absolute;
+        width: 100%;
+        background-color: var(--secondary-Gray);
+        top: 70px;
+        z-index: 10;
+        text-align: center;
+        padding: 10px 0;
+        animation: fade-In 1s forwards ease-in-out;
+    }
+
+    #header .navbar ul.active li {
+        margin: 15px 0;
     }
 }
 
